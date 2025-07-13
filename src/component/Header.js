@@ -12,7 +12,8 @@ export default function Header() {
                 VIJAY KARTHIKEYAN U
             </a>
             <nav className="hidden md:block">
-                <ul className="flex gap-6 text-white colors">
+                <ul className="flex gap-10 text-white colors bg-gradient-to-r from-purple-900 via-blue-900 to-fuchsia-900 rounded-xl px-6 py-3 shadow-lg"
+                    style={{ minHeight: "56px", alignItems: "center" }}>
                     <li>
                         <a
                             href="#/"
@@ -56,51 +57,56 @@ export default function Header() {
                 </ul>
             </nav>
             {togglemenu && (
-                <nav className="block md:hidden absolute top-16 left-0 w-full z-50">
-                    <ul
-                        onClick={() => setmenu(!togglemenu)}
-                        className="flex flex-col text-white colors mob-view bg-gradient-to-b from-purple-900 via-blue-900 to-gray-900 shadow-lg rounded-b-lg"
-                    >
-                        <li>
-                            <a
-                                href="#/"
-                                className="px-5 py-3 border-b border-gray-700 transition-all duration-200 hover:bg-purple-700 hover:text-yellow-200"
-                            >
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#about"
-                                className="px-5 py-3 border-b border-gray-700 transition-all duration-200 hover:bg-blue-700 hover:text-yellow-200"
-                            >
-                                About
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#projects"
-                                className="px-5 py-3 border-b border-gray-700 transition-all duration-200 hover:bg-pink-700 hover:text-yellow-200"
-                            >
-                                Projects
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#contact"
-                                className="px-5 py-3 transition-all duration-200 hover:bg-yellow-700 hover:text-black"
-                            >
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            )}
+  <nav className="block md:hidden fixed top-16 left-0 w-full z-50">
+    <ul
+      onClick={() => setmenu(!togglemenu)}
+      className="flex flex-col text-white bg-gradient-to-b from-purple-900 via-blue-900 to-gray-900 shadow-lg w-full p-2"
+    >
+      <li className="w-full border-b border-white/30">
+        <a
+          href="#/"
+          className="block w-full px-5 py-3 hover:bg-purple-700 hover:text-yellow-200 transition-all duration-200"
+        >
+          Home
+        </a>
+      </li>
+      <li className="w-full border-b border-white/30">
+        <a
+          href="#about"
+          className="block w-full px-5 py-3 hover:bg-blue-700 hover:text-yellow-200 transition-all duration-200"
+        >
+          About
+        </a>
+      </li>
+      <li className="w-full border-b border-white/30">
+        <a
+          href="#projects"
+          className="block w-full px-5 py-3 hover:bg-pink-700 hover:text-yellow-200 transition-all duration-200"
+        >
+          Projects
+        </a>
+      </li>
+      <li className="w-full">
+        <a
+          href="#contact"
+          className="block w-full px-5 py-3 hover:bg-yellow-700 hover:text-black transition-all duration-200"
+        >
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+)}
+
+
             <button
                 onClick={() => setmenu(!togglemenu)}
-                className="block md:hidden ml-3 p-2 rounded transition-colors duration-200 hover:bg-purple-800"
+                className={`block md:hidden ml-3 p-2 rounded transition-all duration-300
+                    ${togglemenu ? 'bg-fuchsia-700 scale-110 shadow-lg' : 'hover:bg-purple-800 hover:scale-105'}
+                `}
+                aria-label="Open menu"
             >
-                <Bars3Icon className="text-white h-6 w-6" />
+                <Bars3Icon className={`h-6 w-6 transition-colors duration-300 ${togglemenu ? 'text-yellow-300' : 'text-white'}`} />
             </button>
         </header>
     );
