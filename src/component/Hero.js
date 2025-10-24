@@ -18,7 +18,7 @@ export default function Hero() {
                     I'm <span className="bg-gradient-to-r from-fuchsia-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-pulse">Vijay</span> Karthikeyan
                 </h1>
                 <p className="text-2xl text-cyan-200 mb-6 text-center md:text-left">
-                    I am a <span className="font-semibold text-fuchsia-300">Full Stack Developer</span>
+                    I am a <span className="font-semibold text-fuchsia-300">Full Stack Developer and </span><span className="font-semibold text-cyan-300">UI/IX Designer</span>
                 </p>
                 <div className="flex mt-2 gap-6">
                     <a

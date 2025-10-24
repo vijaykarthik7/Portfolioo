@@ -1,7 +1,7 @@
 import about from '../img/about2.png';
 // Add icons
 import { FaJava, FaReact, FaFigma } from 'react-icons/fa';
-import { SiC } from 'react-icons/si';
+import { SiC, SiAdobexd, SiFramer } from 'react-icons/si';
 
 export default function About() {
     return(
@@ -29,13 +29,13 @@ export default function About() {
                         About Me
                     </h1>
                     <p className="pb-5 text-lg text-purple-200 hover:text-purple-100 transition-colors duration-200">
-                        I am a <span className="font-semibold text-purple-400">Full Stack Developer</span> with a passion for creating dynamic and responsive web applications.
+                        I am a <span className="font-semibold text-purple-400">Full Stack Developer</span>  passionate about UI/UX design.
                     </p>
                     <p className="pb-5 text-lg text-blue-200 hover:text-blue-100 transition-colors duration-200">
-                        I have a strong foundation in both front-end and back-end technologies, including <span className="font-semibold text-blue-400">HTML, CSS, JavaScript, React</span>
+                        I have a strong foundation in both front-end, back-end and UI/UX technologies, including <span className="font-semibold text-blue-400">HTML, CSS, JavaScript, React, Figma, Wireframe, Framer</span>
                     </p>
                     <p className="pb-5 text-lg text-pink-200 hover:text-pink-100 transition-colors duration-200">
-                        I have experience in both front-end and back-end development, allowing me to build complete solutions
+                        I have experience in both front-end, back-end development and UI/UX design, allowing me to build complete solutions
                         that meet user needs and business goals.
                     </p><br />
                     <h1 className="text-3xl md:text-4xl font-bold text-white underline decoration-purple-500 decoration-4 mb-4 transition-colors duration-300 hover:text-purple-300">
@@ -57,6 +57,11 @@ export default function About() {
                         <li className="flex items-center gap-3 pb-2 text-lg text-pink-200 hover:text-pink-100 transition-colors duration-200">
                             <FaFigma className="text-pink-400 text-2xl" />
                             <span className="font-semibold text-pink-400">Figma</span>
+                        </li>
+
+                        <li className="flex items-center gap-3 pb-2 text-lg text-pink-200 hover:text-pink-100 transition-colors duration-200">
+                            <SiFramer className="text-pink-400 text-2xl" />
+                            <span className="font-semibold text-pink-400">Framer</span>
                         </li>
                     </ul>
                 </div>
