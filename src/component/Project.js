@@ -3,6 +3,8 @@ import p2 from '../img/dragon.jpg'
 import p3 from '../img/movie.png'
 import p4 from '../img/img.png'
 import p5 from '../img/Screenshot 2025-07-07 180251.png'
+import p6 from '../img/proj1.png'
+import p7 from '../img/ag.png'
 import { useRef, useEffect } from 'react';
 
 export default function Project() {
@@ -10,59 +12,88 @@ export default function Project() {
     const contentRef = useRef(null);
     const pausedRef = useRef(false);
 
-    // prepare card elements once
-    const cards = [
-        <div data-index="0" key="p1" className='project-card relative rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-md transition-transform duration-300 hover:scale-105 hover:shadow-pink-500/40 w-[420px] snap-center flex-shrink-0'
-             onMouseEnter={(e) => { pausedRef.current = true; const ov = e.currentTarget.querySelector('.project-overlay'); if (ov) { ov.style.opacity = '1'; ov.style.zIndex = '60'; ov.style.pointerEvents = 'auto'; } }}
-             onMouseLeave={(e) => { pausedRef.current = false; const ov = e.currentTarget.querySelector('.project-overlay'); if (ov) { ov.style.opacity = ''; ov.style.zIndex = ''; ov.style.pointerEvents = ''; } }}>
-            <img className='h-[300px] w-full object-cover' src={p1} alt="Project 1" />
-            <div className='project-overlay absolute inset-0 bg-gradient-to-t from-pink-900/95 via-pink-800/80 to-transparent opacity-0 flex items-center justify-center transition-opacity duration-300'>
-                <p className='text-center px-4 text-lg font-bold text-white drop-shadow-lg'>
-                    Done "Portal for senior citizen" that gets the detail form them and take care of their dailys routine and remind them to do task list. Done using React JS
-                </p>
-            </div>
-        </div>,
-        <div data-index="1" key="p3" className='project-card relative rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-md transition-transform duration-300 hover:scale-105 hover:shadow-blue-500/40 w-[420px] snap-center flex-shrink-0'
-             onMouseEnter={(e) => { pausedRef.current = true; const ov = e.currentTarget.querySelector('.project-overlay'); if (ov) { ov.style.opacity = '1'; ov.style.zIndex = '60'; ov.style.pointerEvents = 'auto'; } }}
-             onMouseLeave={(e) => { pausedRef.current = false; const ov = e.currentTarget.querySelector('.project-overlay'); if (ov) { ov.style.opacity = ''; ov.style.zIndex = ''; ov.style.pointerEvents = ''; } }}>
-            <img className='h-[300px] w-full object-cover' src={p3} alt="Project 2" />
-            <div className='project-overlay absolute inset-0 bg-gradient-to-t from-blue-900/95 via-blue-800/80 to-transparent opacity-0 flex items-center justify-center transition-opacity duration-300'>
-                <p className='text-center px-4 text-lg font-bold text-white drop-shadow-lg'>
-                    Done "Movie Recommendation System" that recommend movies to you according to your like list wish. Done using React JS
-                </p>
-            </div>
-        </div>,
-        <div data-index="2" key="p4" className='project-card relative rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-md transition-transform duration-300 hover:scale-105 hover:shadow-blue-500/40 w-[420px] snap-center flex-shrink-0'
-             onMouseEnter={(e) => { pausedRef.current = true; const ov = e.currentTarget.querySelector('.project-overlay'); if (ov) { ov.style.opacity = '1'; ov.style.zIndex = '60'; ov.style.pointerEvents = 'auto'; } }}
-             onMouseLeave={(e) => { pausedRef.current = false; const ov = e.currentTarget.querySelector('.project-overlay'); if (ov) { ov.style.opacity = ''; ov.style.zIndex = ''; ov.style.pointerEvents = ''; } }}>
-            <img className='h-[300px] w-full object-cover' src={p4} alt="Project 4" />
-            <div className='project-overlay absolute inset-0 bg-gradient-to-t from-blue-900/95 via-blue-800/80 to-transparent opacity-0 flex items-center justify-center transition-opacity duration-300'>
-                <p className='text-center px-4 text-lg font-bold text-white drop-shadow-lg'>
-                    Smart Waste Classification using Deep Learning that classifies waste into Biodegradable, Non-Biodegradable, Mixed Waste and E-Waste
-                </p>
-            </div>
-        </div>,
-        <div data-index="3" key="p2" className='project-card relative rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-md transition-transform duration-300 hover:scale-105 hover:shadow-emerald-500/40 w-[420px] snap-center flex-shrink-0'
-             onMouseEnter={(e) => { pausedRef.current = true; const ov = e.currentTarget.querySelector('.project-overlay'); if (ov) { ov.style.opacity = '1'; ov.style.zIndex = '60'; ov.style.pointerEvents = 'auto'; } }}
-             onMouseLeave={(e) => { pausedRef.current = false; const ov = e.currentTarget.querySelector('.project-overlay'); if (ov) { ov.style.opacity = ''; ov.style.zIndex = ''; ov.style.pointerEvents = ''; } }}>
-            <img className='h-[300px] w-full object-cover' src={p2} alt="Project 3" />
-            <div className='project-overlay absolute inset-0 bg-gradient-to-t from-emerald-900/95 via-emerald-800/80 to-transparent opacity-0 flex items-center justify-center transition-opacity duration-300'>
-                <p className='text-center px-4 text-lg font-bold text-white drop-shadow-lg'>
-                    Done "Dragon Flying Game" in AR / VR using Unity
-                </p>
-            </div>
-        </div>,
-        <div data-index="4" key="p5" className='project-card relative rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-md transition-transform duration-300 hover:scale-105 hover:shadow-emerald-500/40 w-[420px] snap-center flex-shrink-0'
-             onMouseEnter={(e) => { pausedRef.current = true; const ov = e.currentTarget.querySelector('.project-overlay'); if (ov) { ov.style.opacity = '1'; ov.style.zIndex = '60'; ov.style.pointerEvents = 'auto'; } }}
-             onMouseLeave={(e) => { pausedRef.current = false; const ov = e.currentTarget.querySelector('.project-overlay'); if (ov) { ov.style.opacity = ''; ov.style.zIndex = ''; ov.style.pointerEvents = ''; } }}>
-            <img className='h-[300px] w-full object-cover' src={p5} alt="Project 5" />
-            <div className='project-overlay absolute inset-0 bg-gradient-to-t from-emerald-900/95 via-emerald-800/80 to-transparent opacity-0 flex items-center justify-center transition-opacity duration-300'>
-                <p className='text-center px-4 text-lg font-bold text-white drop-shadow-lg'>
-                    Created User Friendly UI Design for House Maid Finding App using Figma
-                </p>
-            </div>
-        </div>
+    // 1) Define project data (simple, no JSX here)
+    const projectsData = [
+        {
+            id: 0,
+            img: p7,
+            alt: "Portal",
+            desc:
+                'Designed a single page for real estate agent website with Figma .'
+        },
+        {
+            id: 1,
+            img: p3,
+            alt: "Movie Recommender",
+            desc:
+                'Done "Movie Recommendation System" that recommends movies according to your preferences. Built with React.'
+        },
+        {
+            id: 2,
+            img: p6,
+            alt: "Ticket UI",
+            desc:
+                'Designed a ticket booking app UI (Flight, Cab, Hotel) using Figma.'
+        },
+        {
+            id: 3,
+            img: p2,
+            alt: "Dragon Game",
+            desc:
+                'Designed a "Dragon Flying Game" in AR / VR using Unity.'
+        },
+        {
+            id: 4,
+            img: p5,
+            alt: "House Maid UI",
+            desc:
+                'Designed a user-friendly UI for a House Maid Finding App using Figma.'
+        }
     ];
+
+    // --- add helper functions so hover + automatic pop use same styles ---
+    const applyOverlayStyles = (overlay) => {
+        if (!overlay) return;
+        // ensure transitions include backdrop-filter (and -webkit-)
+        overlay.style.transition = 'opacity 200ms, background 200ms, -webkit-backdrop-filter 200ms, backdrop-filter 200ms, padding 200ms';
+        overlay.style.opacity = '1';
+        overlay.style.zIndex = '60';
+        overlay.style.pointerEvents = 'auto';
+        // stronger semi-transparent background so backdrop-filter is effective
+        overlay.style.background = 'linear-gradient(to top, rgba(0,0,0,0.92) 10%, rgba(0,0,0,0.72) 50%, rgba(0,0,0,0.30) 100%)';
+        // apply both standard and WebKit-prefixed backdrop-filter (setProperty + camelCase)
+        overlay.style.backdropFilter = 'blur(6px) saturate(120%)';
+        overlay.style.WebkitBackdropFilter = 'blur(6px) saturate(120%)';
+        overlay.style.setProperty('-webkit-backdrop-filter', 'blur(6px) saturate(120%)');
+        overlay.style.setProperty('backdrop-filter', 'blur(6px) saturate(120%)');
+        overlay.style.padding = '1rem';
+        overlay.style.borderRadius = '0.75rem';
+        // ensure the overlay sits above image inside stacking context
+        overlay.style.position = 'absolute';
+        overlay.style.inset = '0';
+    };
+
+    const clearOverlayStyles = (overlay) => {
+        if (!overlay) return;
+        overlay.style.opacity = '';
+        overlay.style.zIndex = '';
+        overlay.style.pointerEvents = '';
+        overlay.style.background = '';
+        overlay.style.backdropFilter = '';
+        overlay.style.WebkitBackdropFilter = '';
+        // remove any set CSS custom properties to be safe
+        try {
+            overlay.style.removeProperty('-webkit-backdrop-filter');
+            overlay.style.removeProperty('backdrop-filter');
+        } catch (e) {
+            // ignore if not supported
+        }
+        overlay.style.padding = '';
+        overlay.style.borderRadius = '';
+        // keep a short opacity transition for smooth hide
+        overlay.style.transition = 'opacity 200ms';
+    };
+    // --- end helpers ---
 
     useEffect(() => {
         const outer = scrollRef.current;
@@ -70,11 +101,12 @@ export default function Project() {
         if (!outer || !inner) return;
 
         let rafId = null;
-        const speed = 0.45; // reduced pixels per frame
+        const speed = 0.45; // px per frame
         const offsetRef = { current: 0 };
         const cardWidth = 420;
         const gap = 32; // gap-8
         const stepSize = cardWidth + gap;
+        const projectCount = projectsData.length;
         let lastPopped = -1;
         let isPausing = false;
 
@@ -87,20 +119,11 @@ export default function Project() {
                     node.style.transition = 'transform 200ms';
                     node.style.transform = 'scale(1.06)';
                     node.style.zIndex = '50';
-                    if (overlay) {
-                        overlay.style.transition = 'opacity 200ms';
-                        overlay.style.opacity = '1';
-                        overlay.style.zIndex = '60';
-                        overlay.style.pointerEvents = 'auto';
-                    }
+                    applyOverlayStyles(overlay); // use helper
                 } else {
                     node.style.transform = '';
                     node.style.zIndex = '';
-                    if (overlay) {
-                        overlay.style.opacity = '';
-                        overlay.style.zIndex = '';
-                        overlay.style.pointerEvents = '';
-                    }
+                    clearOverlayStyles(overlay); // use helper
                 }
             });
         };
@@ -111,17 +134,14 @@ export default function Project() {
                 node.style.transform = '';
                 node.style.zIndex = '';
                 const overlay = node.querySelector('.project-overlay');
-                if (overlay) {
-                    overlay.style.opacity = '';
-                    overlay.style.zIndex = '';
-                    overlay.style.pointerEvents = '';
-                }
+                clearOverlayStyles(overlay); // use helper
             });
         };
 
         const step = () => {
             if (!inner || !outer) return;
             if (!pausedRef.current && !isPausing) {
+                // inner contains duplicated sequence: reset at half width (one sequence length)
                 const resetAt = inner.scrollWidth / 2;
                 offsetRef.current += speed;
                 if (offsetRef.current >= resetAt) offsetRef.current -= resetAt;
@@ -129,11 +149,11 @@ export default function Project() {
 
                 const visibleCenter = offsetRef.current + outer.clientWidth / 2;
                 const rawIndex = Math.round((visibleCenter - cardWidth / 2) / stepSize);
-                const normalizedIndex = ((rawIndex % cards.length) + cards.length) % cards.length;
+                const normalizedIndex = ((rawIndex % projectCount) + projectCount) % projectCount;
                 const cardCenter = rawIndex * stepSize + cardWidth / 2;
                 const diff = Math.abs(visibleCenter - cardCenter);
 
-                const threshold = 12; // pixels tolerance to consider centered
+                const threshold = 12;
                 if (diff < threshold && normalizedIndex !== lastPopped) {
                     lastPopped = normalizedIndex;
                     isPausing = true;
@@ -143,7 +163,7 @@ export default function Project() {
                         clearPop();
                         pausedRef.current = false;
                         isPausing = false;
-                    }, 2000); // keep visible for 4s
+                    }, 2000);
                 }
             }
             rafId = requestAnimationFrame(step);
@@ -165,7 +185,7 @@ export default function Project() {
             if (rafId) cancelAnimationFrame(rafId);
             if (inner) inner.style.transform = '';
         };
-    }, []);
+    }, [projectsData.length]);
 
     return (
         <section
@@ -184,11 +204,34 @@ export default function Project() {
                         className='relative mt-10 py-6 overflow-hidden w-full'
                     >
                         <div ref={contentRef} className='flex gap-8 will-change-transform'>
-                            {[...Array(6)].map((_, i) => (
-                                <div key={i} className='flex gap-8'>
-                                    {cards}
-                                </div>
-                            ))}
+                            {/* 2) Duplicate sequence once for seamless loop */}
+                            {[...projectsData, ...projectsData].map((proj, idx) => {
+                                const dataIndex = proj.id; // 0..projectCount-1
+                                return (
+                                    <div
+                                        key={`proj-${idx}`}
+                                        data-index={dataIndex}
+                                        className='project-card relative rounded-2xl overflow-hidden shadow-2xl bg-white/10 backdrop-blur-md transition-transform duration-300 hover:scale-105 w-[420px] snap-center flex-shrink-0'
+                                        onMouseEnter={(e) => {
+                                            pausedRef.current = true;
+                                            const ov = e.currentTarget.querySelector('.project-overlay');
+                                            applyOverlayStyles(ov); // use helper on hover
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            pausedRef.current = false;
+                                            const ov = e.currentTarget.querySelector('.project-overlay');
+                                            clearOverlayStyles(ov); // clear helper on leave
+                                        }}
+                                    >
+                                        <img className='h-[300px] w-full object-cover' src={proj.img} alt={proj.alt} />
+                                        <div className='project-overlay absolute inset-0 opacity-0 flex items-center justify-center transition-opacity duration-300'>
+                                            <p className='text-center px-4 text-lg font-bold text-white drop-shadow-lg'>
+                                                {proj.desc}
+                                            </p>
+                                        </div>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>

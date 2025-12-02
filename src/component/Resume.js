@@ -21,7 +21,7 @@ export default function Resume() {
                         You can view my Resume here
                     </p>
                    <a
-  href="https://drive.google.com/file/d/1D6GVvzYX1Bzit5E-im6r-h38OihSu03j/view?usp=drive_link"
+  href="https://drive.google.com/file/d/1AVwbBdwNRPJjASc3zfWptlXQCt8vnehN/view?usp=drive_link"
   target="_blank"
   rel="noopener noreferrer"
   className="inline-block px-8 py-3 bg-gradient-to-r from-fuchsia-600 via-cyan-600 to-purple-600 text-white font-semibold rounded-full shadow-lg transition-all duration-300 hover:from-cyan-600 hover:to-fuchsia-600 hover:scale-105 border-2 border-transparent hover:border-white"
